@@ -82,12 +82,10 @@ class frame{
 			$file = $ctrlClass."/".$action;
 		}
 		$filename = APP."/views/".$file.$this->template->getConfig("suffix");
-		//p($filename);exit;
 		if(is_file($filename)){
 			if(!empty($this->assign)){
 				extract($this->assign);
 			}
-			//include $filename;
 			$this->template->show($file);
 		}else{
 			$this->template->show("common/error.html");

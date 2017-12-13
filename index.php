@@ -5,7 +5,6 @@
 *2.加载函数库
 *3.启动框架
 */
-
 //define('FRAME',dirname(__FILE__));//linux 下适用
 define('FRAME',str_replace('\\','/',dirname(realpath(__FILE__))));//window下适用
 define('CORE','./core');
