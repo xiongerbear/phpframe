@@ -49,7 +49,11 @@ class frame{
 		//自动加载类库
 		//new \core\route();
 		//$class='\core\route'
+<<<<<<< HEAD
 		//PRAME.'/core/route.php';
+=======
+		//IMOOC.'/core/route.php';
+>>>>>>> start
 		if(isset($classMap[$class])){
 			return true;
 		}else{
@@ -82,10 +86,18 @@ class frame{
 			$file = $ctrlClass."/".$action;
 		}
 		$filename = APP."/views/".$file.$this->template->getConfig("suffix");
+<<<<<<< HEAD
+=======
+		//p($filename);exit;
+>>>>>>> start
 		if(is_file($filename)){
 			if(!empty($this->assign)){
 				extract($this->assign);
 			}
+<<<<<<< HEAD
+=======
+			//include $filename;
+>>>>>>> start
 			$this->template->show($file);
 		}else{
 			$this->template->show("common/error.html");

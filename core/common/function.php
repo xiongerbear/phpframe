@@ -102,7 +102,11 @@ function U($url,$arr=""){
 }
 
 /**
+<<<<<<< HEAD
  * 测试是否为空目录
+=======
+ * 
+>>>>>>> start
  */
 function is_empty_dir($path){    
     $H = @opendir($path); 

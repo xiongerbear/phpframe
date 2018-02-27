@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> start
 namespace core\lib;
 use core\lib\conf;
 
@@ -23,7 +27,11 @@ class route{
 			// /index/index
 			$path = $_SERVER['PATH_INFO'];
 			$patharr = explode("/",trim($path,'/'));
+<<<<<<< HEAD
 
+=======
+			//p($patharr);exit;
+>>>>>>> start
 			if(isset($patharr[0]) &&  $patharr[0] != "index.php"){
 				$this->ctrl = $patharr[0];
 			}else{

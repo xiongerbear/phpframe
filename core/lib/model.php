@@ -52,6 +52,10 @@ class model extends \PDO
 	}
 
 	public function select() {
+<<<<<<< HEAD
+=======
+		//return "SELECT ".$this->field." FROM ".$this->table_name." ".(implode(" ",$this->sql));
+>>>>>>> start
 		$this->sql_query = "SELECT ".$this->field." FROM ".$this->table_name." ".(implode(" ",$this->sql));
 		return $this->querysql();
 	}
