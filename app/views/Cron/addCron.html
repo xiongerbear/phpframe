@@ -1,0 +1,289 @@
+<?php require PUBLICPATH."/views/common/head.html"; ?>
+<!-- BEGIN BODY -->
+<!-- END SIDEBAR -->
+<!-- BEGIN PAGE -->
+<div class="page-content">
+<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+<div id="portlet-config" class="modal hide">
+	<div class="modal-header">
+		<button data-dismiss="modal" class="close" type="button"></button>
+		<h3>Widget Settings</h3>
+	</div>
+	<div class="modal-body">
+		Widget settings form goes here
+	</div>
+</div>
+<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+<!-- BEGIN PAGE CONTAINER-->
+<div class="container-fluid">
+	<!-- BEGIN PAGE HEADER-->
+	<div class="row-fluid">
+		<div class="span12">
+			<!-- BEGIN STYLE CUSTOMIZER -->
+			<div class="color-panel hidden-phone">
+				<div class="color-mode-icons icon-color"></div>
+				<div class="color-mode-icons icon-color-close"></div>
+				<div class="color-mode">
+					<p>THEME COLOR</p>
+					<ul class="inline">
+						<li class="color-black current color-default" data-style="default"></li>
+						<li class="color-blue" data-style="blue"></li>
+						<li class="color-brown" data-style="brown"></li>
+						<li class="color-purple" data-style="purple"></li>
+						<li class="color-grey" data-style="grey"></li>
+						<li class="color-white color-light" data-style="light"></li>
+					</ul>
+					<label>
+						<span>Layout</span>
+						<select class="layout-option m-wrap small">
+							<option value="fluid" selected>Fluid</option>
+							<option value="boxed">Boxed</option>
+						</select>
+					</label>
+					<label>
+						<span>Header</span>
+						<select class="header-option m-wrap small">
+							<option value="fixed" selected>Fixed</option>
+							<option value="default">Default</option>
+						</select>
+					</label>
+					<label>
+						<span>Sidebar</span>
+						<select class="sidebar-option m-wrap small">
+							<option value="fixed">Fixed</option>
+							<option value="default" selected>Default</option>
+						</select>
+					</label>
+					<label>
+						<span>Footer</span>
+						<select class="footer-option m-wrap small">
+							<option value="fixed">Fixed</option>
+							<option value="default" selected>Default</option>
+						</select>
+					</label>
+				</div>
+			</div>
+			<!-- END BEGIN STYLE CUSTOMIZER -->    
+			<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+			<h3 class="page-title">
+				Linux管理面板首页-计划任务<small>statistics and more</small>
+			</h3>
+			<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href="index.html">首页</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">计划任务-添加计划任务</a></li>
+				<!-- <li class="pull-right no-text-shadow">
+					<div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-desktop="tooltips" data-placement="top" data-original-title="Change dashboard date range">
+						<i class="icon-calendar"></i>
+						<span></span>
+						<i class="icon-angle-down"></i>
+					</div>
+				</li> -->
+			</ul>
+			<!-- END PAGE TITLE & BREADCRUMB-->
+		</div>
+	</div>
+	<!-- END PAGE HEADER-->
+	<div id="dashboard">
+		<!-- BEGIN DASHBOARD STATS -->
+		<!-- start自定义修改的表格 -->
+		<div class="row-fluid">
+			<div class="span12">
+				<!-- BEGIN BUTTONS PORTLET-->
+				<div class="portlet box blue">
+					<div class="portlet-title">
+						<div class="caption"><i class="icon-reorder"></i>添加计划任务</div>
+						<div class="tools">
+							<a href="javascript:;" class="collapse"></a>
+							<!-- <a href="#portlet-config" data-toggle="modal" class="config"></a>
+							<a href="javascript:;" class="reload"></a>
+							<a href="javascript:;" class="remove"></a> -->
+						</div>
+					</div>
+					<div class="portlet-body form">
+						<!-- BEGIN TABLE/主要内容-->
+<form action="<?php echo U('Cron/addTimeCron');  ?>" class="form-horizontal" method="post">
+	<div class="control-group">
+		<label class="control-label">选择计划任务</label>
+		<div class="controls">
+			<select class="large m-wrap" tabindex="1" name="cronid">
+				{foreach $cron}
+					<option value="<?php echo $V['id']; ?>"><?php echo $V['title']; ?></option>
+				{/foreach}
+			</select>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">选择定时类型</label>
+		<div class="controls">
+			<label class="radio">
+			<div class="radio"><span><input name="type" value="1" type="radio"></span></div>
+			月定时
+			</label>
+			<label class="radio">
+			<div class="radio"><span class="checked"><input name="type" value="2" checked="" type="radio"></span></div>
+			周定时
+			</label>  
+		</div>
+	</div>
+
+	<div class='control-group tian'>
+
+	</div>
+
+	<div class="control-group">
+		<label class="control-label">选择定时类型</label>
+		<div class="controls">
+			<label class="radio">
+			<div class="radio"><span class="checked"><input name="hour" value="1" type="radio"></span></div>
+			0点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			1点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			2点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			3点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			4点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			5点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			6点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			7点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			8点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			9点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			10点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			11点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			12点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			13点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			14点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			15点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			16点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			17点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			18点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			19点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			20点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			21点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			22点
+			</label>
+			<label class="radio">
+			<div class="radio"><span><input name="hour" value="2" checked="" type="radio"></span></div>
+			23点
+			</label>
+		</div>
+	</div>
+
+	<div class="form-actions">
+		<button type="submit" class="btn blue"><i class="icon-ok"></i>确认添加</button>
+		<button type="button" class="btn">取消</button>
+	</div>
+</form>
+						<!-- END TABLE/主要内容-->  
+					</div>
+				</div>
+				<!-- END BUTTONS PORTLET-->      
+			</div>
+		</div>
+		<!-- end自定义修改的表格 -->
+	</div>
+</div>
+<!-- END PAGE CONTAINER-->    
+</div>
+<!-- END PAGE -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<?php require PUBLICPATH."/views/common/footer.html"; ?>
+<script type="text/javascript">
+	$(function(){
+		var str = "<label class='control-label'>选择每周某日</label><div class='controls'><select class='large m-wrap' tabindex='1' name='tian'>";
+		for (var i=1;i<=7;i++){
+			str += "<option value="+i+">每周"+i+"</option>";
+		}
+		str +="</select></div>";
+		$(".tian").empty().append(str);
+				
+		$("input[name=type]").change(function(){
+			var type = $(this).val();
+			var str = "";
+			if(type == 1){
+				var str = "<label class='control-label'>选择每月某日</label><div class='controls'><select class='large m-wrap' tabindex='1' name='tian'>";
+				for (var i=1;i<=31;i++){
+					str += "<option value="+i+">每月"+i+"日</option>";
+				}
+				str +="</select></div>";
+			}else{
+				var str = "<label class='control-label'>选择每周某日</label><div class='controls'><select class='large m-wrap' tabindex='1' name='tian'>";
+				for (var i=1;i<=7;i++){
+					str += "<option value="+i+">每周"+i+"</option>";
+				}
+				str +="</select></div>";
+			}
+
+			$(".tian").empty().append(str);
+		});
+	});
+</script>

@@ -1,0 +1,11 @@
+/**
+ * 自定义的css样式
+ */
+.line-2{width:16.6%;float:left;display:block;height:auto;margin:10px 0;cursor:pointer;}
+.line-2>div{display:block;width:auto;height:auto;}
+.line-2>div>img{display:block;width:auto;margin:10px auto;}
+.line-2>span{width:100%;display:block;line-height:20px;text-align:center;color:#666;}
+
+
+
+.keyright{display:block!important;}

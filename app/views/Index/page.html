@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>first</title>
+</head>
+<body>
+	<h1>这是index的视图文件！！！</h1>
+	<?php
+		foreach($list as $val){
+			echo "<h2>".$val['name']."-----".$val['sex']."</h2>";
+		}
+	?>
+	<?php echo $page; ?>
+</body>
+</html>
